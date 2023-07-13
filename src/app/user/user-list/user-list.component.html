@@ -1,1 +1,51 @@
-<p>user-list works!</p>
+<p>user-list works!</p>  
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th></th>
+                <th>User Id</th>
+                <th>Action</th>
+                <th>Email</th>
+                <th>Creation Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of users; let i = index;" [class]="{ 'bg-primary': users, 'bg-warning': !users }">
+                <td>{{ item.userId }}</td>
+                <td>{{ item.username | uppercase }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.creationDate }}</td>
+                <td>{{ item.isActive }}</td>
+  
+                  
+                <td>
+                  <input type="checkbox" [(ngModel)]="isActive" name="" id="">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <a routerLink="/usercreate"><button>Add User</button></a>
+
+<form *ngIf="editMode">
+    <label for="username">Username</label>
+    <input type="text" [(ngModel)]="username" name= "username" >
+    <label for="email">Email</label>
+    <input type="email" [(ngModel)]="email" name= "email" >
+    <label for="creationDate">Creation Date</label>
+    <input type="date" [(ngModel)]="creationDate" name= "creationDate" >
+    <label for="isActive">Activation Statu</label>
+    <select [(ngModel)]="isActive" name="isActive">
+        <option [value]="true"> Active </option>
+        <option [value]="false">Passive</option>
+    </select>
+    <div>
+        <button (click)="handleSaveClick()" type="button">Save</button>
+        <button (click)="handleCancelClick()" type="button">Cancel</button>
+    </div>
+</form>
+  
+        
+  
+  
