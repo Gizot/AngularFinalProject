@@ -51,6 +51,9 @@ export class UserService {
     else
       return true ;
   }
+  userCount() : number {
+    return this.users.length ; 
+  }
   
   }
 
