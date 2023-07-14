@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserModule } from './user/user.module';
+import { PostModule } from './post/post.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { UserModule } from './user/user.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+   
    
   ],
   providers: [],

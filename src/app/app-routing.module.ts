@@ -12,7 +12,7 @@ const routes: Routes = [
   {path : "userlist", component : UserListComponent},
   {path : "postlist", component : PostListComponent},
   {path : "postadd", component : PostAddComponent},
-  {path : "postdetail", component : PostDetailComponent},
+  {path : "postlist/:id", component : PostListComponent},
   
 ];
 

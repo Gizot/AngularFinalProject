@@ -3,28 +3,25 @@
     <thead>
       <tr>
         <th>Post Id</th>
-        <th>User Id</th>
-        <th>Category Id</th>
         <th>Title</th>
-        <th>Content</th>
         <th>View Count</th>
         <th>Creation Date</th>
-        <th>Published Status</th>
+        <th>Publish Status</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of posts" >
-        <td>{{ item.post }}</td>
-        <td>{{ item.username| uppercase }}</td>
-        <td>{{ item.email }}</td>
-        <td>{{ item.creationDate | date }}</td>
-        <td>{{ item.isActive }}</td>
+      <tr *ngFor="let item of pagedData" >
+        <td>{{ item.postId}}</td>
+        <td>{{ item.title}}</td>
+        <td>{{ item.viewCount}}</td>
+        <td>{{ item.creationDate}}</td>
+        <td>{{ item.isPublished}}</td>
 
       <td>
-        <app-button [buttonText] = "'Delete'" [id]= "item.userId" (onButtonClick)= "handleDeleteClick($event)" >
-        </app-button>
-        <app-button [buttonText]="'Edit'" [id]= "item.userId" (onButtonClick)="handleEditClick($event)">
-        </app-button>
+    
+    <app-button [buttonText]="'Detail'" [id]= "item.postId" (onButtonClick)="handleDetailClick($event)"></app-button>
+    <app-button [buttonText] = "'Delete'" [id]= "item.postId" (onButtonClick)="handleDeleteClick($event)" ></app-button>
+        
       </td>
       </tr>
     </tbody>
