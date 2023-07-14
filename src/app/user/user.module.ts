@@ -4,7 +4,7 @@ import { UserCreateComponent } from './user-create/user-create.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { FormsModule } from '@angular/forms';
 import { AppModule } from '../app.module';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,6 +17,10 @@ import { Router, RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     RouterModule,
+    AppModule,
+  ],
+  exports: [
+    UserListComponent
   ]
 })
 export class UserModule { }

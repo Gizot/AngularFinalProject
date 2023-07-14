@@ -9,6 +9,7 @@ import { UserService } from '../user.service';
 })
 export class UserListComponent {
   users: User[] = [];
+
   userId : number = 0;
   username : string = "";
   email : string = "";
@@ -39,7 +40,7 @@ export class UserListComponent {
         username: this.username ,
         email: this.email ,
         creationDate: this.creationDate ,
-        isActive: this.isActive
+        isActive: this.isActive,
       }
       this.userService.editUser(user, this.userId);
       this.users = this.userService.getUsers();
@@ -56,6 +57,17 @@ export class UserListComponent {
     this.email = "";
     this.creationDate = "";
     this.userId= 0;
+
+  }
+
+  handleDeleteClick($event : number) {
+    if(this.userService.userCount() === 1)
+      alert("You can not delete last users.")
+    else {
+      this.userService.deleteUser($event);
+      this.users = this.userService.getUsers();
+    }
+
 
   }
   
