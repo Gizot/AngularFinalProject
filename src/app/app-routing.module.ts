@@ -5,6 +5,8 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { PostAddComponent } from './post/post-add/post-add.component';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
+import { CategoryListComponent } from './categories/category-list/category-list.component';
+import { CategoryDetailComponent } from './categories/category-detail/category-detail.component';
 
 
 const routes: Routes = [
@@ -13,6 +15,9 @@ const routes: Routes = [
   {path : "postlist", component : PostListComponent},
   {path : "postadd", component : PostAddComponent},
   {path : "postlist/:id", component : PostListComponent},
+  {path : "categorylist", component :   CategoryListComponent},
+  {path : "categorydetails", component : CategoryDetailComponent},
+  
   
 ];
 
