@@ -1,19 +1,51 @@
-<p>user-create works!</p>
-<form>
-    <label for="username">Username</label>
-    <input type="text" [(ngModel)]="user.username" name="username">
-    <label for="email">Email Adress</label>
-    <input type="text" [(ngModel)]="user.email" name="email">
-    <label for="creationDate">User Creation Date</label>
-    <input type="date" [(ngModel)]="user.creationDate" name="creationDate">
-    <label for="userState">User State</label>
-    <select [(ngModel)]="user.isActive" name="userState">
-        <option [value]="true">Active</option>
-        <option [value]="false">Passive</option>
-    </select>
-    <div>
-        <button type="button" (click)="handleCreateClick()">Create</button>
-        <button type="button" (click)="handleCancelClick()">Cancel</button>
+<div class="card"  >
+    <div class="card-header" style="background-color: blueviolet;">Header</div>
+    <div class="card-body" style="background-color: #dfe44e77;">
+        <form class="row g-3 needs-validation" novalidate>
+    
+            <div class="col-md-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" type="text" [(ngModel)]="user.username" name="username" required>
+              <div class="valid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="email" class="form-label">Email</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text" >@</span>
+                <input type="text" class="form-control" [(ngModel)]="user.email" name="email" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Please choose a username.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="creationDate" class="form-label">CreationDate</label>
+              <input type="date" class="form-control" [(ngModel)]="user.creationDate" name="creationDate" required>
+            </div>
+            <div class="col-md-3">
+              <label for="userState" class="form-label">Status</label>
+              <select class="form-select" [(ngModel)]="user.isActive" name="userState" required>
+                <option selected disabled value="">Choose...</option>
+                <option [value]="true">Active</option>
+                <option [value]="false">Passive</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>
+            <div>
+                <button class="btn btn-secondary" type="button" (click)="handleCreateClick()">Create</button>
+                <button class="btn btn-secondary" type="button" (click)="handleCancelClick()">Cancel</button>
+            </div>
+            
+          </form>
     </div>
-</form>
+    <div class="card-footer" style="background-color: blueviolet;">Footer</div>
+  </div>
+  
+
+  
+
 

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-create.component.css']
 })
 export class UserCreateComponent {
+  
   user : User = {
     userId : 0,
     username :  "",

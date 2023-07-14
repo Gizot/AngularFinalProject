@@ -8,6 +8,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
+ 
   users: User[] = [];
 
   userId : number = 0;
