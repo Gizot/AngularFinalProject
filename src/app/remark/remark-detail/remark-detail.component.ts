@@ -20,6 +20,17 @@ export class RemarkDetailComponent {
     isConfirmed: false
   };
 
-  constructor(private activatedRoute : ActivatedRoute, private remarkService =RemarkService)
+  constructor(private activatedRoute : ActivatedRoute, private remarkService : RemarkService) {}
+
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      this.remarks = this.remarkService.getRemarks();
+      const id = params['id'];
+      this.remark = this.remarks.find(remark => remark.commentId ===Number(id))!;
+
+      
+
+    })
+  }
 
 }
