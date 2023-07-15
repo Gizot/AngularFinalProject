@@ -7,12 +7,14 @@ import { ButtonComponent } from './button/button.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserModule } from './user/user.module';
 import { PostModule } from './post/post.module';
+import { CategoriesModule } from './categories/categories.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
-    NavbarComponent
+    NavbarComponent,
+    
   ],
   imports: [
     BrowserModule,

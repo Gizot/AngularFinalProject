@@ -1,1 +1,31 @@
-<p>category-detail works!</p>
+<div class="category-card">
+    <div class="category-detail">
+        <div class="header">
+            <p>{{existCategory.categoryId}}</p>
+            <h1>{{existCategory.name | uppercase }}</h1>
+        </div>
+        <div class="content">
+            <h2>Creation Date</h2>
+            <p>{{existCategory.creationDate}}</p>
+        </div>
+        <div class="footer">
+            <div>
+                <p>{{existCategory.name}} contains {{postCount}} posts.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button (click)="handleEditClick()">Edit</button>
+<button [routerLink]="'/categorylist'">Return Category List</button>
+
+<form *ngIf="editMode">
+    <label for="name">Name</label>
+    <input type="text" [(ngModel)]="editedCategory.name" name="name">
+    <label for="creationDate">Creation Date</label>
+    <input type="date" [(ngModel)]="editedCategory.creationDate" name="creationDate">
+    <div>
+        <button type="button" (click)="handleSaveClick()">Save</button>
+        <button type="button" (click)="handleCancelClick()">Cancel</button>
+    </div>
+</form>

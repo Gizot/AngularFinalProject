@@ -8,8 +8,11 @@ import { defaultcategory } from 'src/assets/categoriesdefault';
 })
 export class CategoriesServiceService {
   private category : Category[] = [];
+  
 
   constructor(private postService : PostService) { }
+
+  
 
   getCategories(): Category[] {
     return this.category;
