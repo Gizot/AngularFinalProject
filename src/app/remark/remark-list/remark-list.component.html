@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of remarks">
+        <tr *ngFor="let item of pagedData">
             <td>{{item.commentId}}</td>
             <td>{{item.postId}}</td>
             <td>{{item.userId}}</td>
@@ -22,3 +22,11 @@
         </tr>
     </tbody>
 </table>
+
+<button type="button" routerLink="/remarkadd">Add Comment</button>
+
+<div class="pagination" *ngIf="totalPages > 0">
+    <button [disabled]="currentPage === 1" (click)="previousPage()">Previous</button>
+    <span>{{ currentPage }}</span>
+    <button [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+</div>
