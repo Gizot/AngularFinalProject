@@ -7,9 +7,6 @@ import { PostAddComponent } from './post/post-add/post-add.component';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { CategoryListComponent } from './categories/category-list/category-list.component';
 import { CategoryDetailComponent } from './categories/category-detail/category-detail.component';
-import { CommentListComponent } from './comments/comment-list/comment-list.component';
-import { CommentAddComponent } from './comments/comment-add/comment-add.component';
-import { CommentDetailComponent } from './comments/comment-detail/comment-detail.component';
 
 
 const routes: Routes = [
