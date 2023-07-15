@@ -1,4 +1,4 @@
-export const defaultcomments = [
+export const defaultcomment = [
     {
       commentId: 1,
       postId: 23,

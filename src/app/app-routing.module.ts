@@ -20,9 +20,6 @@ const routes: Routes = [
   {path : "postlist/:id", component : PostListComponent},
   {path : "categorylist", component :   CategoryListComponent},
   {path : "categorydetails/:id", component : CategoryDetailComponent},
-  {path : "commentlist", component : CommentListComponent},
-  {path : "commentadd", component : CommentAddComponent},
-  {path : "commentlist/:id", component : CommentDetailComponent}
 ];
 
 @NgModule({

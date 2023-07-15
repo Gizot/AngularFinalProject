@@ -9,6 +9,7 @@ import { UserModule } from './user/user.module';
 import { PostModule } from './post/post.module';
 import { CategoriesModule } from './categories/categories.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,8 @@ import { CategoriesModule } from './categories/categories.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    
+    
    
    
   ],
