@@ -38,13 +38,14 @@ export class RemarkAddComponent {
         this.posts = this.postService.getPost();
        }
   }
-  
+
   handleSaveClick(){
     if(this.remark.postId === 0 || this.remark.userId === 0 || this.remark.creationDate === "" || this.remark.comment === "")
     alert ("You must fill every section");
     else{
       this.remark.commentId = this.remarks[this.remarks.length -1].commentId +1;
-      
+      this.remarkService.addRemark(this.remark);
+      this.router.navigateByUrl("/remarklist");
     }
 
   }
