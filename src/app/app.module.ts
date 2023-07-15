@@ -9,6 +9,7 @@ import { UserModule } from './user/user.module';
 import { PostModule } from './post/post.module';
 import { CategoriesModule } from './categories/categories.module';
 import { RemarkModule } from './remark/remark.module';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { RemarkModule } from './remark/remark.module';
     AppComponent,
     ButtonComponent,
     NavbarComponent,
+    HomeComponent,
     
   ],
   imports: [
