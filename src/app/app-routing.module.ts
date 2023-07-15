@@ -9,6 +9,7 @@ import { CategoryListComponent } from './categories/category-list/category-list.
 import { CategoryDetailComponent } from './categories/category-detail/category-detail.component';
 import { RemarkListComponent } from './remark/remark-list/remark-list.component';
 import { RemarkAddComponent } from './remark/remark-add/remark-add.component';
+import { RemarkDetailComponent } from './remark/remark-detail/remark-detail.component';
 
 
 const routes: Routes = [
@@ -16,11 +17,11 @@ const routes: Routes = [
   {path : "userlist", component : UserListComponent},
   {path : "postlist", component : PostListComponent},
   {path : "postadd", component : PostAddComponent},
-  {path : "postlist/:id", component : PostListComponent},
+  {path : "postlist/:id", component : PostDetailComponent},
   {path : "categorylist", component : CategoryListComponent},
   {path : "categorydetails/:id", component : CategoryDetailComponent},
   {path : "remarklist", component : RemarkListComponent},
-  {path : "remarklist/:id", component : RemarkListComponent},
+  {path : "remarklist/:id", component : RemarkDetailComponent},
   {path : "remarkadd", component : RemarkAddComponent},
 ];
 
