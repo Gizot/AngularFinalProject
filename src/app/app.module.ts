@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UserModule } from './user/user.module';
 import { PostModule } from './post/post.module';
 import { CategoriesModule } from './categories/categories.module';
+import { RemarkModule } from './remark/remark.module';
 
 
 @NgModule({
@@ -21,9 +22,6 @@ import { CategoriesModule } from './categories/categories.module';
     BrowserModule,
     AppRoutingModule,
     
-    
-   
-   
   ],
   providers: [],
   bootstrap: [AppComponent],
