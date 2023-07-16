@@ -25,10 +25,11 @@ export class RemarkListComponent {
   };
 
   handleDetailClick($event: number) {
-    this.router.navigateByUrl('/remarklist/${$event}');
+    this.router.navigateByUrl(`/remarklist/${$event}`);
   }
 
   handleDeleteClick($event : number) {
+    console.log(typeof $event)
     this.remarkService.deleteRemark($event);
     this.remarks = this.remarkService.getRemarks();
   }

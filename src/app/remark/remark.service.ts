@@ -19,6 +19,7 @@ export class RemarkService {
   }
 
   deleteRemark ($event : number) {
+    console.log(typeof $event)
     this.remarks = this.remarks.filter((remark) => remark.commentId !== $event);
   }
 

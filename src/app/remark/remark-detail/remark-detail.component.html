@@ -1,27 +1,46 @@
-<div class="card" style="width: 300px;" >
-  
-    <div class="card-body" style="background-color:  hsla(348, 58%, 36%, 0.706);">
+<div class="card">
 
-<div class="comment-card">
-    <div class="remark-detail">
-        <div class="header">
-            <p>Comment ID: {{remark.commentId}}</p>
-            <p>Post ID: {{remark.postId}}</p>
-            <p>User ID: {{remark.userId}}</p>
-        </div>
-        <div class="content">
-            <h2>Content</h2>
-            <p>{{remark.comment}}</p>
-        </div>
-        <div class="footer">
-            <div>
-                <h2>Creation Date</h2>
-                <p>{{remark.creationDate}}</p>
-                <h2>Is Confirmed</h2>
-                <p>{{remark.isConfirmed}}</p>
-            </div>
-        </div>
+    <div class="card-body" style="background-color:  hsla(348, 58%, 36%, 0.706);">
+  
+      <h4 class="text-center mt-3" style="font-size: xx-large;"> User List</h4>
+
+
+     <table>
+            <thead>
+                <tr>
+                    <th>Comment ID</th>
+                    <th>Post ID</th>
+                    <th>User ID</th>
+                    <th>Comment</th>
+                    <th>Creation Date</th>
+                    <th>Is Confirmed</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <td>{{remark.commentId}}</td>
+                    <td>{{remark.postId}}</td>
+                    <td>{{remark.userId}}</td>
+                    <td>{{remark.comment}}</td>
+                    <td>{{remark.creationDate}}</td>
+                    <td>{{remark.isConfirmed}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+
     </div>
 </div>
 
 <button type="button" routerLink="/remarklist">Return Comment List</button>
+        <!--
+        ***************************************************** 
+
+    -->
+
+
+<div class="card" style="width: 300px;" >
+  
+    <div class="card-body" style="background-color:  hsla(348, 58%, 36%, 0.706);">
+

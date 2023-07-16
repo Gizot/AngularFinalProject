@@ -17,9 +17,9 @@
     <tbody>
       <tr *ngFor="let item of pagedData" >
         <td>{{ item.postId}}</td>
-        <td>{{ item.title}}</td>
+        <td>{{ item.title | uppercase }}</td>
         <td>{{ item.viewCount}}</td>
-        <td>{{ item.creationDate}}</td>
+        <td>{{ item.creationDate | date}}</td>
         <td>{{ item.isPublished}}</td>
         <td>  
             <app-button class="detailButton" [buttonText]="'Detail'" [id]= "item.postId" (onButtonClick)="handleDetailClick($event)"></app-button>

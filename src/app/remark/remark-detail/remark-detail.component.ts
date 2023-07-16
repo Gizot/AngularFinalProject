@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Remark } from '../remark';
 import { ActivatedRoute } from '@angular/router';
 import { RemarkService } from '../remark.service';
+import { PostService } from 'src/app/post/post.service';
 
 @Component({
   selector: 'app-remark-detail',
@@ -20,15 +21,14 @@ export class RemarkDetailComponent {
     isConfirmed: false
   };
 
-  constructor(private activatedRoute : ActivatedRoute, private remarkService : RemarkService) {}
+  constructor(private activatedRoute : ActivatedRoute, private remarkService : RemarkService,
+    private postService : PostService , ) {}
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.remarks = this.remarkService.getRemarks();
       const id = params['id'];
       this.remark = this.remarks.find(remark => remark.commentId ===Number(id))!;
-
-      
 
     })
   }
