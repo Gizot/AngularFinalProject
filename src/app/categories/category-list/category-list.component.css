@@ -1,0 +1,51 @@
+.deleteButton {
+    float: right;
+    
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.cancelButton {
+    margin-right: 5px;
+    float: right;
+    vertical-align: middle;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.saveButton{
+    margin-right: 5px;
+    float: right;
+    vertical-align: middle;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+.detailButton{
+    margin-right: 5px;
+    float: right;
+    vertical-align: middle;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

@@ -1,63 +1,63 @@
+<div class="card">
 
-
-<div class="card"  >
-  
   <div class="card-body" style="background-color:  hsla(348, 58%, 36%, 0.706);">
- 
-<h4 class="text-center mt-3" style="font-size: xx-large;"> User List</h4>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>User Id</th>
-                <th>User Name</th>
-                <th>Action</th>
-                <th>Email</th>
-                <th>Creation Date</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let item of users" >
-                <td>{{ item.userId }}</td>
-                <td>{{ item.username| uppercase }}</td>
-                <td>{{ item.email }}</td>
-                <td>{{ item.creationDate | date }}</td>
-                <td>{{ item.isActive }}</td>
-  
-              <td>
-                <app-button [buttonText] = "'Delete'" [id]= "item.userId" (onButtonClick)= "handleDeleteClick($event)" >
-                </app-button>
-                <app-button [buttonText]="'Edit'" [id]= "item.userId" (onButtonClick)="handleEditClick($event)">
-                </app-button>
-              </td>
-              </tr>
-            </tbody>
-          </table>
 
-          <a routerLink="/usercreate"><button>Add User</button></a>
+    <h4 class="text-center mt-3" style="font-size: xx-large;"> User List</h4>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>User Id</th>
+          <th>User Name</th>
+          <th>Action</th>
+          <th>Email</th>
+          <th>Creation Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of users">
+          <td>{{ item.userId }}</td>
+          <td>{{ item.username| uppercase }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.creationDate | date }}</td>
+          <td>{{ item.isActive }}</td>
 
-          <div class="card container my-5"  >
+          <td>
+            <app-button [buttonText]="'Delete'" [id]="item.userId" (onButtonClick)="handleDeleteClick($event)">
+            </app-button>
+            <app-button [buttonText]="'Edit'" [id]="item.userId" (onButtonClick)="handleEditClick($event)">
+            </app-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-<form *ngIf="editMode">
-    <label for="username">Username</label>
-    <input type="text"placeholder="Enter the username" class="form-control form-control-lg" [(ngModel)]="username" name= "username" >
-    <label for="email">Email</label>
-    <input type="email" placeholder="Enter the email" class="form-control form-control-lg" [(ngModel)]="email" name= "email" >
-    <label for="creationDate">Creation Date</label>
-    <input type="date" class="form-control form-control-lg" [(ngModel)]="creationDate" name= "creationDate" >
-    <label for="isActive">Activation Status</label>
-    <select [(ngModel)]="isActive" name="isActive">
-        <option [value]="true"> Active </option>
-        <option [value]="false">Passive</option>
-    </select>
-    <div>
-        <button (click)="handleSaveClick()" type="button">Save</button>
-        <button (click)="handleCancelClick()" type="button">Cancel</button>
+    <a routerLink="/usercreate"><button>Add User</button></a>
+
+    <div class="card container my-5">
+
+      <form *ngIf="editMode">
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter the username" class="form-control form-control-lg" [(ngModel)]="username"
+          name="username">
+        <label for="email">Email</label>
+        <input type="email" placeholder="Enter the email" class="form-control form-control-lg" [(ngModel)]="email"
+          name="email">
+        <label for="creationDate">Creation Date</label>
+        <input type="date" class="form-control form-control-lg" [(ngModel)]="creationDate" name="creationDate">
+        <label for="isActive">Activation Status</label>
+        <select [(ngModel)]="isActive" name="isActive">
+          <option [value]="true"> Active </option>
+          <option [value]="false">Passive</option>
+        </select>
+        <div>
+          <button (click)="handleSaveClick()" type="button">Save</button>
+          <button (click)="handleCancelClick()" type="button">Cancel</button>
+        </div>
+      </form>
+
+
     </div>
-</form>
-
-        
-</div>
 
   </div>
 </div>
