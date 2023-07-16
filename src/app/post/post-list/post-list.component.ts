@@ -34,7 +34,7 @@ export class PostListComponent {
   pageChanged(page : number) : void {
     const startIndex = (page -1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    this.pagedData = this.posts.slice(startIndex);
+    this.pagedData = this.posts.slice(startIndex, endIndex);
     this.currentPage =  page;
     if(this.pagedData.length === 0 && this.currentPage > 1)
     this.previousPage();

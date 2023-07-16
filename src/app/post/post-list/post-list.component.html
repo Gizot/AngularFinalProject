@@ -15,14 +15,16 @@
         <td>{{ item.title}}</td>
         <td>{{ item.viewCount}}</td>
         <td>{{ item.creationDate}}</td>
-        <td>{{ item.isPublished}}</td>
-
-      <td>
-    
+        <td>{{ item.isPublished}}</td>    
     <app-button [buttonText]="'Detail'" [id]= "item.postId" (onButtonClick)="handleDetailClick($event)"></app-button>
-    <app-button [buttonText] = "'Delete'" [id]= "item.postId" (onButtonClick)="handleDeleteClick($event)" ></app-button>
-        
-      </td>
+    <app-button [buttonText] = "'Delete'" [id]= "item.postId" (onButtonClick)="handleDeleteClick($event)"></app-button>
       </tr>
     </tbody>
   </table>
+  <div class="pagination" *ngIf="totalPage > 0">
+    <button [disabled]="currentPage === 1" (click)="previousPage()">Previous</button>
+    <span>{{ currentPage }}</span>
+    <button [disabled]="currentPage === totalPage" (click)="nextPage()">Next</button>
+</div>
+
+<button [routerLink]="'/postadd'">Add Post</button>

@@ -11,7 +11,7 @@
         <div class="footer">
             <div>
                 <h2>Category</h2>
-                <p></p>
+                <p>{{categories[post.categoryId - 1].name}}</p>
             </div>
             <div>
                 <h2>Date</h2>
@@ -58,5 +58,4 @@
     </div>
 </form>
 
-<button [routerLink]="'/postlist'">Turn Back to Post List</button>
-
+<button [routerLink]="'/postlist'">Return Post List</button>
