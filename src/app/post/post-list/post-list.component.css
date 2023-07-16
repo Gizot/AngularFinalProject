@@ -1,5 +1,14 @@
 
 
+table {
+    width: 100%;
+    color:  rgb(0, 0, 0);
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: var(--secondaryFont);
+}
+
 .deleteButton {
     float: right;
     

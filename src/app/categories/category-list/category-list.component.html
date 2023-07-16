@@ -29,19 +29,17 @@
 
         <button (click)="handleAddCategory()">Add Category</button>
 
-        <div class="card"  >
+        <div class="card container my-5">
   
-            <div class="card-body" style="background-color:  hsla(348, 58%, 36%, 0.706);">
-
-        <form *ngIf="addCategoryForm">
-            <div class="col-md-3">
+        <form  *ngIf="addCategoryForm">
+            
             <label for="name">Name</label>
             <input type="text" [(ngModel)]="nameOfNewCategory" name="name">
-        </div>
-        <div class="col-md-3">
+        
+        
             <label for="creationDate">Creation Date</label>
             <input type="date" [(ngModel)]="dateOfnewCategory" name="creationDate">
-        </div>
+     
             <div>
                 <button class="saveButton" (click)="handleSaveClick()">Save</button>
                 <button class="cancelButton" (click)="handleCancelClick()">Cancel</button>

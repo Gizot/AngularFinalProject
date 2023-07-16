@@ -1,32 +1,42 @@
-<table>
-    <thead>
-        <tr>
-            <th>Comment ID</th>
-            <th>Post ID</th>
-            <th>User ID</th>
-            <th>Comment</th>
-            <th>Creation Date</th>
-            <th>Is Confirmed</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of pagedData">
-            <td>{{item.commentId}}</td>
-            <td>{{item.postId}}</td>
-            <td>{{item.userId}}</td>
-            <td>{{item.comment}}</td>
-            <td>{{item.creationDate}}</td>
-            <td>{{item.isConfirmed}}</td>
-            <app-button [buttonText]="'Detail'" [id]= "item.commentId" (onButtonClick)="handleDetailClick($event)"></app-button>
-            <app-button [buttonText]="'Delete'" [id]= "item.commentId" (onButtonClick)="handleDeleteClick($event)" ></app-button>
-        </tr>
-    </tbody>
-</table>
+<div class="card">
 
-<button type="button" routerLink="/remarkadd">Add Comment</button>
+    <div class="card-body" style="background-color:  hsla(348, 58%, 36%, 0.706);">
 
-<div class="pagination" *ngIf="totalPages > 0">
-    <button [disabled]="currentPage === 1" (click)="previousPage()">Previous</button>
-    <span>{{ currentPage }}</span>
-    <button [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+        <h4 class="text-center mt-3" style="font-size: xx-large;"> Comment List</h4>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Comment ID</th>
+                    <th>Post ID</th>
+                    <th>User ID</th>
+                    <th>Comment</th>
+                    <th>Creation Date</th>
+                    <th>Is Confirmed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of pagedData">
+                    <td>{{item.commentId}}</td>
+                    <td>{{item.postId}}</td>
+                    <td>{{item.userId}}</td>
+                    <td>{{item.comment}}</td>
+                    <td>{{item.creationDate}}</td>
+                    <td>{{item.isConfirmed}}</td>
+                    <app-button [buttonText]="'Detail'" [id]="item.commentId"
+                        (onButtonClick)="handleDetailClick($event)"></app-button>
+                    <app-button [buttonText]="'Delete'" [id]="item.commentId"
+                        (onButtonClick)="handleDeleteClick($event)"></app-button>
+                </tr>
+            </tbody>
+        </table>
+
+        <button type="button" routerLink="/remarkadd">Add Comment</button>
+
+        <div class="pagination" *ngIf="totalPages > 0">
+            <button [disabled]="currentPage === 1" (click)="previousPage()">Previous</button>
+            <span>{{ currentPage }}</span>
+            <button [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+        </div>
+    </div>
 </div>
