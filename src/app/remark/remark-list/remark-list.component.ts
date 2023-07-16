@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Remark } from '../remark';
 import { RemarkService } from '../remark.service';
 import { Router } from '@angular/router';
+import { PostService } from 'src/app/post/post.service';
 
 @Component({
   selector: 'app-remark-list',
@@ -14,10 +15,13 @@ export class RemarkListComponent {
   currentPage = 1;
   itemsPerPage = 10;
 
-  constructor(private remarkService : RemarkService, private router : Router) {
+  constructor(private postService : PostService ,private remarkService : RemarkService, private router : Router) {
     if (this.remarkService.getRemarks().length === 0)
-    this.remarkService.setRemarks();
+     this.remarkService.setRemarks();
     this.remarks = this.remarkService.getRemarks();
+
+    if (this.postService.getPost().length === 0)
+     this.postService.setPost();
   };
 
   handleDetailClick($event: number) {
