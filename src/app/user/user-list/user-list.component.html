@@ -1,9 +1,13 @@
 
+
+
+<div class="container my-5" style="background-color: rgba(228, 192, 10, 0.666);color:black;border:2px solid black; height: 700px; width: 800px; ">
+<h4 class="text-center mt-3" style="font-size: xx-large;"> User List</h4>
           <table class="table table-hover">
             <thead>
               <tr>
-                <th></th>
                 <th>User Id</th>
+                <th>User Name</th>
                 <th>Action</th>
                 <th>Email</th>
                 <th>Creation Date</th>
@@ -29,9 +33,9 @@
           </table>
 
           <a routerLink="/usercreate"><button>Add User</button></a>
-          <div class="card"  >
-            <div class="card-header" style="background-color: blueviolet;">Header</div>
-            <div class="card-body" style="background-color: #dfe44e77;">
+</div>
+          <div class="card container my-5"  >
+
 <form *ngIf="editMode">
     <label for="username">Username</label>
     <input type="text"placeholder="Enter the username" class="form-control form-control-lg" [(ngModel)]="username" name= "username" >
@@ -49,9 +53,8 @@
         <button (click)="handleCancelClick()" type="button">Cancel</button>
     </div>
 </form>
-</div>
-<div class="card-footer" style="background-color: blueviolet;">Footer</div>
-</div>  
+
         
-  
+</div>
+
   

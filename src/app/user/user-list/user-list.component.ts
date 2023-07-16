@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
+import { PostService } from 'src/app/post/post.service';
+import { RemarkService } from 'src/app/remark/remark.service';
 
 @Component({
   selector: 'app-user-list',
@@ -19,11 +21,16 @@ export class UserListComponent {
   editMode : boolean = false;
 
 
-  constructor(private userService : UserService) {
+  constructor(private userService : UserService, private postService : PostService,
+    private remarkService : RemarkService ) {
     if (this.userService.getUsers().length === 0)
     this.userService.setUsers();
     else
     this.users = this.userService.getUsers();
+    if(this.postService.getPost().length === 0)
+    this.postService.setPost();
+    if(this.remarkService.getRemarks().length === 0 )
+    this.remarkService.setRemarks();
   }
   handleEditClick($event: number): void {
     this.editMode = true;
@@ -64,12 +71,20 @@ export class UserListComponent {
   handleDeleteClick($event : number) {
     if(this.userService.userCount() === 1)
       alert("You can not delete last users.")
+    else if (this.checkPostsAndRemarks($event)=== true)  
+      alert ("You cannot delete a user with post or comment")
     else {
       this.userService.deleteUser($event);
       this.users = this.userService.getUsers();
     }
-
-
+  }
+  checkPostsAndRemarks(id : number) : boolean {
+    if(this.postService.getPost().filter((post)=> post.userId === id).length !== 0)
+    return true;
+    else if (this.remarkService.getRemarks().filter((remark) => remark.userId === id).length !==0)
+    return true;
+    else 
+    return false;
   }
   
   
