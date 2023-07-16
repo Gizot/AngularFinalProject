@@ -7,17 +7,7 @@ table {
     font-family: var(--secondaryFont);
 }
 
-.deleteButton {
-    float: right;
-    
-    border: none;
-    color: white;
-    padding: 10px 32px;
-    text-align: left;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
+
 
 .cancelButton {
     margin-right: 5px;
@@ -46,18 +36,7 @@ table {
 
 }
 
-.detailButton{
-    margin-right: 5px;
-    float: right;
-    vertical-align: middle;
-    border: none;
-    color: white;
-    padding: 10px 32px;
-    text-align: left;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
+
 
 
 .col-md-3 {
@@ -67,4 +46,14 @@ table {
     margin-top: 5px;
 
 
+}
+
+thead > tr > th:last-child {
+    text-align: center;
+}
+
+tr>td:last-child {
+    display: flex;
+    gap: 10px
+    ;
 }

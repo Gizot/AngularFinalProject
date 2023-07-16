@@ -32,6 +32,7 @@ export class RemarkListComponent {
     console.log(typeof $event)
     this.remarkService.deleteRemark($event);
     this.remarks = this.remarkService.getRemarks();
+    this.pageChanged(this.currentPage);
   }
 
   get totalPage(): number {
